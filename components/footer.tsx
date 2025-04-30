@@ -14,20 +14,20 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex space-x-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="https://github.com/fadexadex" className="text-muted-foreground hover:text-foreground transition-colors">
               <span className="sr-only">Github</span>
               <Github className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="https://www.linkedin.com/in/danielfadehan/" className="text-muted-foreground hover:text-foreground transition-colors">
               <span className="sr-only">LinkedIn</span>
               <Linkedin className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="https://x.com/f_adex_" className="text-muted-foreground hover:text-foreground transition-colors">
               <span className="sr-only">Twitter</span>
               <Twitter className="h-5 w-5" />
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <span className="sr-only">Email</span>
+              <span className="mailto:adexxing021@gmail.com">Email</span>
               <Mail className="h-5 w-5" />
             </Link>
           </div>
