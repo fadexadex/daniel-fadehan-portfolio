@@ -242,7 +242,7 @@ export default function Projects({ projects = [] }: ProjectsProps) {
         <div className="mt-12 text-center">
           <Button asChild variant="outline">
             <a
-              href="https://github.com/fadehan"
+              href="https://github.com/fadexadex"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2"
