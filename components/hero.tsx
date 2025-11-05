@@ -85,7 +85,7 @@ export default function Hero() {
             >
               <motion.div variants={itemVariants} className="mb-4 flex justify-center md:justify-start">
                 <span className="hero-badge inline-block px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary rounded-full">
-                  Backend Engineer
+                  Software Engineer
                 </span>
               </motion.div>
 
@@ -100,9 +100,9 @@ export default function Hero() {
                 variants={itemVariants}
                 className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed"
               >
-                I build reliable server side systems that scale. 
+                I build reliable software systems that scale. 
                 Specializing in distributed
-                systems, API design, and database optimization.
+                systems, API design, and database optimization, and cloud infrastructure.
               </motion.p>
 
               <motion.div

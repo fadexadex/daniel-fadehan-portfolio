@@ -19,7 +19,8 @@ export default function About() {
       items: [
         { name: "Node.js", level: 95 },
         { name: "Express", level: 90 },
-        { name: "NestJS", level: 85 },
+        { name: "React.js", level: 80 },
+        { name: "NestJS", level: 80 },
         { name: "Flask", level: 75 },
       ],
     },
@@ -71,7 +72,7 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">About Me</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-muted-foreground">
-          I'm a passionate backend engineer with over 2 years of experience building reliable systems and APIs. I specialize in engineering efficient solutions to meet complex user and system requirements.  
+          I'm a passionate software engineer with over 2 years of experience building reliable systems and APIs. I specialize in engineering efficient solutions to meet complex user and system requirements.  
           </p>
         </motion.div>
 
@@ -85,7 +86,7 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold font-heading">My Journey</h3>
             <p className="text-muted-foreground">
-             I began my journey into backend engineering when I took my first programming boot camp. I fell in love with backend systems and decided to make a career out of it. Over the past few years, I have had the opportunity to work alongside extremely talented engineers in hackathons, early-stage startups, and open-source projects.
+             I began my journey into software engineering when I took my first programming boot camp. I fell in love with building systems and decided to make a career out of it. Over the past few years, I have had the opportunity to work alongside extremely talented engineers in hackathons, early-stage startups, and open-source projects.
             </p>
             <p className="text-muted-foreground">
               My approach combines technical excellence with a deep understanding of business needs. I believe that the
