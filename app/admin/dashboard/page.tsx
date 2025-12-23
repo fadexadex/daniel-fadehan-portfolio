@@ -5,6 +5,7 @@ import { useAuth } from "@/contexts/auth-context"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AdminHeader from "@/components/admin/admin-header"
 import ProjectsManagement from "@/components/admin/projects-management"
+import ProjectGenerator from "@/components/admin/project-generator"
 import ExperienceManagement from "@/components/admin/experience-management"
 import MessagesManagement from "@/components/admin/messages-management"
 import { useRouter } from "next/navigation"
@@ -14,6 +15,7 @@ export default function Dashboard() {
   const { user, loading } = useAuth()
   const router = useRouter()
   const [activeTab, setActiveTab] = useState("projects")
+  const [projectsSubTab, setProjectsSubTab] = useState("manage")
 
   if (loading) {
     return (
@@ -40,8 +42,19 @@ export default function Dashboard() {
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="messages">Messages</TabsTrigger>
           </TabsList>
-          <TabsContent value="projects">
-            <ProjectsManagement />
+          <TabsContent value="projects" className="space-y-6">
+            <Tabs value={projectsSubTab} onValueChange={setProjectsSubTab} className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-6 max-w-md">
+                <TabsTrigger value="manage">Manage Projects</TabsTrigger>
+                <TabsTrigger value="generate">Generate from Files</TabsTrigger>
+              </TabsList>
+              <TabsContent value="manage">
+                <ProjectsManagement />
+              </TabsContent>
+              <TabsContent value="generate">
+                <ProjectGenerator />
+              </TabsContent>
+            </Tabs>
           </TabsContent>
           <TabsContent value="experience">
             <ExperienceManagement />
