@@ -41,7 +41,7 @@ export default function Experience({ experiences = [] }: ExperienceProps) {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-lg text-muted-foreground">
-            My professional journey as a backend engineer, showcasing my growth and achievements.
+            My professional journey as a software engineer, showcasing my growth and achievements.
           </p>
         </motion.div>
 
@@ -220,7 +220,7 @@ function ExperienceCard({
               "{experience.recommendations[0].text}"
             </blockquote>
             <div className="mt-2 text-xs">
-              <span className="font-medium">— {experience.recommendations[0].author}</span>,{" "}
+              <span className="font-medium">— {experience.recommendations[0].name}</span>,{" "}
               {experience.recommendations[0].position}
             </div>
           </motion.div>
