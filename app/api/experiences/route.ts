@@ -1,7 +1,7 @@
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
 import { type NextRequest, NextResponse } from "next/server"
-// Remove the revalidateData import
+import { revalidatePath } from "next/cache"
 
 export async function GET(request: NextRequest) {
   const supabase = createRouteHandlerClient({ cookies })
@@ -42,7 +42,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  // No need to revalidate cache here
+  // Revalidate pages to reflect the new experience
+  revalidatePath("/")
 
   return NextResponse.json(data[0])
 }

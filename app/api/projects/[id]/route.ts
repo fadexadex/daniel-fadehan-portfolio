@@ -1,7 +1,7 @@
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
 import { type NextRequest, NextResponse } from "next/server"
-// Remove the revalidateData import
+import { revalidatePath } from "next/cache"
 
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   const supabase = createRouteHandlerClient({ cookies })
@@ -34,7 +34,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  // No need to revalidate cache here
+  // Revalidate pages to reflect the updated project
+  revalidatePath("/")
+  revalidatePath("/projects")
+  revalidatePath(`/projects/${params.id}`)
 
   return NextResponse.json(data[0])
 }
@@ -56,7 +59,10 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  // No need to revalidate cache here
+  // Revalidate pages to reflect the deleted project
+  revalidatePath("/")
+  revalidatePath("/projects")
+  revalidatePath(`/projects/${params.id}`)
 
   return NextResponse.json({ success: true })
 }

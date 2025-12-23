@@ -13,8 +13,12 @@ import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
 import rehypeSanitize from "rehype-sanitize"
 
-export default async function ProjectDetail({ params }: { params: { id: string } }) {
-  const project = await getProjectById(Number.parseInt(params.id))
+// Force dynamic rendering to always fetch fresh data from the database
+export const dynamic = 'force-dynamic'
+
+export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const project = await getProjectById(Number.parseInt(id))
 
   if (!project) {
     notFound()
