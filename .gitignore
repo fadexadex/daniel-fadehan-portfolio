@@ -27,5 +27,5 @@ yarn-error.log*
 next-env.d.ts
 .env*.local
 
-campor-frontend.txt
-projects_rows.json
+.campor-frontend.txt
+.projects_rows.json
