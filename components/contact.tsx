@@ -131,7 +131,7 @@ export default function Contact() {
 
             <div className="mt-8">
               <Button asChild variant="outline" size="lg" className="w-full">
-                <a href="https://docs.google.com/document/d/1AcZbkBB2gPvZBoJAXyAbwTkgkdn3VMtUBd41W1GfjzI/export?format=pdf" download className="inline-flex items-center justify-center gap-2">
+                <a href="https://drive.google.com/uc?export=download&id=1FjU1HGwZ0NTyN7tC_V1DMMFpO-Gj8Okj" download className="inline-flex items-center justify-center gap-2">
                   <Download className="h-4 w-4" />
                   Download Resume
                 </a>
