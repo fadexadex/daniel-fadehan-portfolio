@@ -61,11 +61,11 @@ export default function Hero() {
             >
               <div className="relative w-60 h-60 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-4 border-primary/20">
                 <Image
-                  src="/images/profile.png"
+                  src="/images/daniel.png"
                   alt="Fadehan Daniel"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-2xl transition-all duration-500 filter grayscale hover:grayscale-0"
+                  className="rounded-2xl transition-all duration-500 object-top"
                 />
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -100,7 +100,7 @@ export default function Hero() {
                 variants={itemVariants}
                 className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed"
               >
-                I build reliable software systems that scale. 
+                I build reliable software systems that scale.
                 Specializing in distributed
                 systems, API design, and database optimization, and cloud infrastructure.
               </motion.p>

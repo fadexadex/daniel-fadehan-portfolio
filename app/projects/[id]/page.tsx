@@ -154,9 +154,8 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
           <TabsList
             className="w-full max-w-md mx-auto grid mb-8"
             style={{
-              gridTemplateColumns: `repeat(${
-                [true, !!project.system_design, !!project.database_design].filter(Boolean).length
-              }, 1fr)`,
+              gridTemplateColumns: `repeat(${[true, !!project.system_design, !!project.database_design].filter(Boolean).length
+                }, 1fr)`,
             }}
           >
             <TabsTrigger value="overview">Overview</TabsTrigger>

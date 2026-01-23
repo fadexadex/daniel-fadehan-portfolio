@@ -10,15 +10,15 @@ export default function About() {
       category: "Languages",
       items: [
         { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Python", level: 80 },
+        { name: "TypeScript", level: 90 },
+        { name: "Python", level: 90 },
       ],
     },
     {
       category: "Frameworks",
       items: [
         { name: "Node.js", level: 95 },
-        { name: "Express", level: 90 },
+        { name: "Express", level: 95 },
         { name: "React.js", level: 80 },
         { name: "NestJS", level: 80 },
         { name: "Flask", level: 75 },
