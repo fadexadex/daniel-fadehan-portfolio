@@ -18,8 +18,13 @@ export const metadata = {
   title: "Fadehan Daniel | Software Engineer",
   description:
     "Portfolio of Fadehan Daniel, a software engineer specializing in building reliable software systems that scale.",
-  viewport:
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -34,10 +39,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${montserrat.variable}`}
     >
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
+
         <link
           rel="icon"
           href="https://pyeklitbktoezqmbwbvx.supabase.co/storage/v1/object/public/portfolio//logo_icon.ico"

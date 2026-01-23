@@ -7,8 +7,8 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import { getProjects, getExperiences } from "@/lib/data"
 
-// Force dynamic rendering to always fetch fresh data from the database
-export const dynamic = 'force-dynamic'
+// Revalidate this page every hour
+export const revalidate = 3600
 
 export default async function Home() {
   // Fetch data from Supabase

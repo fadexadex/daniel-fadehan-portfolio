@@ -1,4 +1,4 @@
-import { getProjectById } from "@/lib/data"
+import { getProjectById, getProjects } from "@/lib/data"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Github, ExternalLink, Layout, Database, Award, Calendar, Users, Lock } from "lucide-react"
 import Image from "next/image"
@@ -8,13 +8,22 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ProjectOverview } from "@/components/project-overview"
 import ScrollToTop from "@/components/scroll-to-top"
+import ProjectBackButton from "@/components/project-back-button"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
 import rehypeSanitize from "rehype-sanitize"
 
 // Force dynamic rendering to always fetch fresh data from the database
-export const dynamic = 'force-dynamic'
+// Revalidate this page every hour
+export const revalidate = 3600
+
+export async function generateStaticParams() {
+  const projects = await getProjects()
+  return projects.map((project) => ({
+    id: project.id.toString(),
+  }))
+}
 
 export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -42,11 +51,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
 
       <div className="container px-4 mx-auto">
         <div className="mb-8">
-          <Button asChild variant="ghost" className="mb-8 -ml-2 text-muted-foreground">
-            <Link href="/#projects">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-            </Link>
-          </Button>
+          <ProjectBackButton />
 
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <Badge variant="outline" className="capitalize">
