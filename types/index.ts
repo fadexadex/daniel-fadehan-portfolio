@@ -7,7 +7,7 @@ export type Project = {
   category: "personal" | "hackathon"
   position?: string // For hackathons, the position achieved
   tags: string[]
-  github: string
+  github?: string
   demo?: string // Optional
   features: string[]
   challenges: string[]

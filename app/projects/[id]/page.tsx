@@ -1,6 +1,6 @@
 import { getProjectById } from "@/lib/data"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Github, ExternalLink, Layout, Database, Award, Calendar, Users } from "lucide-react"
+import { ArrowLeft, Github, ExternalLink, Layout, Database, Award, Calendar, Users, Lock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -107,17 +107,29 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
           )}
 
           <div className="flex flex-wrap gap-4 mb-8">
-            <Button asChild variant="outline">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
+            {project.github ? (
+              <Button asChild variant="outline">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <Github className="h-4 w-4" />
+                  View Source
+                </a>
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                disabled
+                className="inline-flex items-center gap-2 cursor-not-allowed opacity-60"
+                title="Source code is private"
               >
-                <Github className="h-4 w-4" />
-                View Source
-              </a>
-            </Button>
+                <Lock className="h-4 w-4" />
+                Private Source
+              </Button>
+            )}
             {project.demo && (
               <Button asChild>
                 <a

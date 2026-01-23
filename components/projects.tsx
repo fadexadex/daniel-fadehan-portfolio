@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, Github, Code, ArrowUpRight, Award, User } from "lucide-react"
+import { ExternalLink, Github, Code, ArrowUpRight, Award, User, Lock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
@@ -22,7 +22,7 @@ export type Project = {
   category: "personal" | "hackathon"
   position?: string // For hackathons, the position achieved
   tags: string[]
-  github: string
+  github?: string
   demo?: string // Now optional
   features: string[]
   challenges: string[]
@@ -158,15 +158,24 @@ export default function Projects({ projects = [] }: ProjectsProps) {
                       className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6"
                     >
                       <div className="flex gap-3">
-                        <motion.a
-                          href={project.github}
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors z-20"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <Github className="h-5 w-5" />
-                        </motion.a>
+                        {project.github ? (
+                          <motion.a
+                            href={project.github}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors z-20"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <Github className="h-5 w-5" />
+                          </motion.a>
+                        ) : (
+                          <motion.div
+                            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white opacity-50 cursor-not-allowed z-20"
+                            title="Source code is private"
+                          >
+                            <Lock className="h-5 w-5" />
+                          </motion.div>
+                        )}
                         {project.demo && (
                           <motion.a
                             href={project.demo}
