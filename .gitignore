@@ -31,3 +31,4 @@ next-env.d.ts
 .projects_rows.json
 
 .mcp.json
+.gstack/

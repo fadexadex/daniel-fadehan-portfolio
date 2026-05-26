@@ -85,7 +85,7 @@ export default function Hero() {
             >
               <motion.div variants={itemVariants} className="mb-4 flex justify-center md:justify-start">
                 <span className="hero-badge inline-block px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary rounded-full">
-                  Software Engineer
+                  AI Native Software Engineer
                 </span>
               </motion.div>
 

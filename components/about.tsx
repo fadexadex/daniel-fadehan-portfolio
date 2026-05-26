@@ -86,7 +86,7 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold font-heading">My Journey</h3>
             <p className="text-muted-foreground">
-             I began my journey into software engineering when I took my first programming boot camp. I fell in love with building systems and decided to make a career out of it. Over the past few years, I have had the opportunity to work alongside extremely talented engineers in hackathons, early-stage startups, and open-source projects.
+             I began my journey into software engineering when I took my first programming boot camp. I fell in love with building systems and decided to make a career out of it. Over the past few years, I have had the opportunity to work alongside extremely talented engineers in hackathons (btw I've won in 7), early-stage startups, and open-source projects.
             </p>
             <p className="text-muted-foreground">
               My approach combines technical excellence with a deep understanding of business needs. I believe that the
