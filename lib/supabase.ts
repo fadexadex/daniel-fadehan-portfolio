@@ -1,10 +1,16 @@
 import { createClient } from "@supabase/supabase-js"
 
+// Fetch options that opt out of Next.js Data Cache so Supabase responses
+// are never stale — force-dynamic on pages handles the Full Route Cache,
+// but the Data Cache needs to be opted out separately.
+const uncachedFetch: typeof fetch = (url, options = {}) =>
+  fetch(url, { ...options, cache: "no-store" })
+
 // Create a single supabase client for interacting with your database
 export const createServerSupabaseClient = () => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY!
-  return createClient(supabaseUrl, supabaseKey)
+  return createClient(supabaseUrl, supabaseKey, { global: { fetch: uncachedFetch } })
 }
 
 // Create a client-side supabase client
@@ -27,4 +33,4 @@ export const getClientSupabaseClient = () => {
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY!
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+export const supabase = createClient(supabaseUrl, supabaseKey, { global: { fetch: uncachedFetch } })

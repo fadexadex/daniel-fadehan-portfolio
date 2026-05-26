@@ -1,9 +1,11 @@
 import { supabase } from "@/lib/supabase"
 import type { Project, Experience } from "@/types"
 import { cache } from "react"
+import { unstable_noStore as noStore } from "next/cache"
 
 // Cache the getProjects function using React's cache
 export const getProjects = cache(async (): Promise<Project[]> => {
+  noStore()
   try {
     const { data, error } = await supabase
       .from("projects")
@@ -36,6 +38,7 @@ export const getProjectById = cache(async (id: number): Promise<Project | null> 
 
 // Cache the getExperiences function using React's cache
 export const getExperiences = cache(async (): Promise<Experience[]> => {
+  noStore()
   try {
     const { data, error } = await supabase
       .from("experiences")

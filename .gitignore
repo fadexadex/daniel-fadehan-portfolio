@@ -29,3 +29,5 @@ next-env.d.ts
 
 .campor-frontend.txt
 .projects_rows.json
+
+.mcp.json
